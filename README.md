@@ -15,7 +15,7 @@ assets/fonts - шрифты<br>
 <br>
 <br>
 <br>
-## Участники учебного проекта<br>
+ Участники учебного проекта<br>
 https://github.com/RiverBeaver<br>
 https://github.com/AhnQiraji<br>
 https://github.com/Isuzuri<br>
