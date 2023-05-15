@@ -1,0 +1,273 @@
+.taskCreationLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+
+    .task {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: $default-padding;
+        padding: 2 * $default-padding;
+        border-radius: $default-padding;
+        box-shadow: $white-box-shadow;
+        background-color: $main-bg-color;
+    }
+
+}
+
+.task {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: $default-padding;
+    width: 31 * $default-padding;
+    height: 100%;
+    padding: 2 * $default-padding;
+    // border-radius: $default-padding;
+    box-shadow: $white-box-shadow;
+    background-color: $main-bg-color;
+    overflow: auto;
+    z-index: 1;
+
+    input, textarea {
+        color: $light-bg-color;
+    }
+
+    .assignTo select {
+        border: none;
+        outline: none;
+        box-shadow: $lesser-white-box-shadow;
+        border-radius: $little-border-radius;
+        padding: 0.25 * $default-padding 0.5 * $default-padding;
+        background-color: $main-bg-color;
+    }
+
+    .actionsBar{
+        position: absolute;
+        right: $default-padding;
+        top: $default-padding;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        column-gap: 0.25 * $default-padding;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.75 * $default-padding;
+        width: 100%;
+
+        span {
+            font-weight: 300;
+            color: $light-bg-color;
+
+            &.boardName {
+                padding: 0.125 * $default-padding 0.5 * $default-padding;
+                border-radius: $default-padding;
+                box-shadow: $lesser-white-box-shadow;
+            }
+        }
+
+        input:not([type=radio]) {
+            width: 27rem;
+            background-color: $main-bg-color;
+            box-shadow: $lesser-white-box-shadow;
+
+            &[type="password"] {
+                margin-top: $default-padding;
+            }
+        }
+
+        textarea {
+            resize: none;
+            width: 27 * $default-padding;
+            height: 8 * $default-padding;
+            background-color: $main-bg-color;
+            box-shadow: $lesser-white-box-shadow;
+            outline: none;
+            // border: none;
+        }
+
+        &.options {
+            flex-direction: row;
+            justify-content: space-between;
+            
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                span {
+                    text-align: center;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: $default-padding;
+
+                    svg {
+                        width: 1.25 * $svg-size;
+                        height: 1.25 * $svg-size;
+                        margin-bottom: - $svg-padding;
+                    }
+                }
+
+                select {
+                    min-width: 8rem;
+                    border: none;
+                    outline: none;
+                    box-shadow: $lesser-white-box-shadow;
+                    border-radius: $default-padding;
+                    padding: 0.25 * $default-padding 0.5 * $default-padding;
+                    background-color: $main-bg-color;
+                }
+            }
+
+            .chooseImportance {
+
+                #importance {
+                    
+                    input:checked + label {
+                        outline: $light-border;
+                        outline-offset: 2 * $border-width;
+                    }
+
+                    >* {
+                        width: 1.5 * $default-padding;
+                        height: 1.5 * $default-padding;
+                        border-radius: 50%;
+
+                        &.high {
+                            background-color: $bad-color;
+                        }
+        
+                        &.medium {
+                            background-color: $normal-color;
+                        }
+        
+                        &.low {
+                            background-color: $good-color;
+                        }
+
+                        &:hover {
+                            outline: $light-border;
+                            outline-offset: 2 * $border-width;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .chooseAccess {
+
+                label {
+                    border-radius: $svg-radius;
+                }
+                
+                input:checked + label {
+                    background-color: $secondary-bg-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        margin-top: $default-padding;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        border: none;
+        padding: 0.25 * $default-padding $default-padding;
+        border-radius: $default-padding;
+        background-color: $secondary-bg-color;
+        box-shadow: $lesser-white-box-shadow;
+        color: $light-bg-color;
+
+        &:hover {
+            box-shadow: 0 0 0 2px $light-border-color;
+        }
+    }
+
+    .newComment {
+        position: fixed;
+        bottom: 1 * $default-padding;
+        z-index: 1;
+
+        textarea {
+            padding-right: 2.5 * $default-padding;
+        }
+
+        .postComment {
+            filter: invert(60%);
+            position: absolute;
+            right: 0.375 * $default-padding;
+            bottom: 0.75 * $default-padding;
+            width: 2 * $default-padding;
+            height: 2 * $default-padding;
+            padding: 0.5 * $default-padding;
+            border-radius: $svg-radius;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $secondary-light-bg-color;
+            }
+        }
+
+        >span {
+            position: absolute;
+            right: 0.375 * $default-padding;
+            top: 0.375 * $default-padding;
+            font-size: $smaller-font-size;
+        }
+    }
+
+    .placeholder {
+        order: 1;
+        height: 8rem;
+    }
+
+    .comment {
+        position: relative;
+        width: 27 * $default-padding;
+        padding: 0.5 * $default-padding $default-padding 1.5 * $default-padding 3 * $default-padding;
+        border-radius: $little-border-radius;
+        box-shadow: $lesser-white-box-shadow;
+        color: $light-bg-color;
+        font-weight: 300;
+        font-size: $small-font-size;
+
+        .avatarPlaceholder {
+            position: absolute;
+            left: 0.5 * $default-padding;
+            top: 0.5 * $default-padding;    
+            width: 2 * $default-padding;
+            height: 2 * $default-padding;
+            padding: 0;
+            border-radius: 50%;
+
+            path {
+                fill: $secondary-bg-color;
+            }
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .date {
+            position: absolute;
+            right: $default-padding;
+            bottom: 0.25 * $default-padding;
+            font-size: $smaller-font-size;
+        }
+    }
+}

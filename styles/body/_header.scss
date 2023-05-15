@@ -1,0 +1,85 @@
+header {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: $default-border;
+    border-color: $border-color;
+    padding: $header-padding 4 * $header-padding;
+    background-color: $main-bg-color;
+
+
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 2em;
+        gap: $header-padding;
+        color: $light-bg-color;
+
+        nav {
+            height: 100%;
+            margin-right: calc(3 * $header-padding);
+            border-radius: 2 * $little-border-radius;
+            transition: all 0.3s linear;
+
+            svg {
+                width: $square-elemets-width;
+                height: 100%;
+
+                path {
+                    fill: $light-border-color;
+                }
+            }
+        }
+
+        .mainLogo {
+            width: $square-elemets-width;
+            height: 100%;
+            filter: invert(1);
+        }
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        padding: 0 0.25 * $default-padding 0 0.5 * $default-padding;
+        border-radius: $default-padding;
+
+        &:hover {
+            background-color: $secondary-bg-color;
+            cursor: pointer;
+        }
+
+        .userName {
+            padding: 0.25 * $default-padding;
+            color: $light-bg-color;
+        }
+
+        .userLogo {
+            height: 100%;
+            padding: 0.25 * $default-padding;
+            border-radius: 50%;
+            transition: all 0.3s linear;
+            
+            img {
+                width: calc($square-elemets-width - 2 * 0.25 * $default-padding);
+                height: 100%;
+            }
+        }
+        
+        svg {
+            width: $square-elemets-width;
+            height: 100%;
+            padding: 0;
+            border-radius: 50%;
+
+            path {
+                fill: $secondary-bg-color;
+            }
+
+            &:hover {
+                background-color: inherit;
+            }
+        }
+    }
+}

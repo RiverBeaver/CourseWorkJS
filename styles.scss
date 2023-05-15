@@ -1,0 +1,168 @@
+@import 'styles/reset';
+@import 'styles/vars';
+@import 'styles/scrollbar';
+@import 'styles/fonts';
+
+* {
+    font-family: 'Roboto';
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+hr {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img[src="assets/png/sortIco.png"], img[src="assets/png/plusIco.png"], img[src="assets/png/deleteIco.png"], img[src="assets/png/optionsIco.png"], img[src="assets/png/avatarPlaceholder.png"] {
+    filter: invert(1);
+}
+
+button {
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+    // font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 0 2px $light-border-color;
+    }
+}
+
+input:not([type=radio]) {
+    min-width: 16rem;
+    border: none;
+    outline: none;
+    box-shadow: $light-box-shadow;
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+}
+
+input[type=radio] {
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
+
+textarea {
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+select {
+    color: $light-border-color;
+}
+
+svg {
+    width: $svg-size;
+    height: $svg-size;
+    padding: $svg-padding;
+    border-radius: $svg-radius;
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+    path {
+        fill: $light-border-color;
+    }
+
+    &.plusIco, &.filterIco, &.sortIco, &.crossIco {
+
+        path {
+            stroke: $light-border-color;
+        }
+    }
+
+    &:hover {
+        background-color: $secondary-bg-color;
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @import 'styles/body/authorization';
+    @import 'styles/body/header';
+    @import 'styles/body/main';
+    @import 'styles/body/profile';
+    @import 'styles/body/task';
+    @import 'styles/body/filter';
+    @import 'styles/body/profileOptions';
+}
+
+#assigneeHoverLayout {
+    position: absolute;
+    padding: 0.15 * $default-padding 0.3 * $default-padding;
+    border: 2 * $border-width solid $secondary-bg-color;
+    // border-radius: $default-padding;
+    background-color: $main-bg-color;
+    color: $light-bg-color;
+    font-size: $small-font-size;
+}
+
+.errorOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+    
+    .errorLayout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 7 * $default-padding;
+        min-height: 5 * $default-padding;
+        padding: 2 * $default-padding;
+        border-radius: $default-padding;
+        background-color: $main-bg-color;
+        
+        span {
+            color: $light-bg-color;
+
+            &:first-child {
+                font-size: 2 * $h3-font-size;
+                margin-bottom: 2 * $default-padding;
+            }
+        }
+    }
+}
+
+.popUp {
+    position: absolute;
+    padding: 1rem 0.5rem;
+    background-color: rgba($color: #ffffff, $alpha: 0.85);
+    border: 1px solid $good-color;
+    border-radius: 0.5rem;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    color: black;
+}
