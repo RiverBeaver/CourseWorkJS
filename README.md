@@ -1,3 +1,5 @@
+https://riverbeaver.github.io/CourseWorkJS/
+
 # Task manager
 <strong>
 index.html - основная html, включающая в себя остальные страницы<br>
