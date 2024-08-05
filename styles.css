@@ -712,7 +712,8 @@ body .task {
   overflow: auto;
   z-index: 1;
 }
-body .task input, body .task textarea {
+body .task input,
+body .task textarea {
   color: rgb(249, 248, 248);
 }
 body .task .assignTo select {
@@ -893,12 +894,10 @@ body .task .comment .avatarPlaceholder {
   height: 2rem;
   padding: 0;
   border-radius: 50%;
+  cursor: default;
 }
 body .task .comment .avatarPlaceholder path {
   fill: #1C1C1C;
-}
-body .task .comment .avatarPlaceholder:hover {
-  opacity: 0.5;
 }
 body .task .comment .date {
   position: absolute;

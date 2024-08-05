@@ -159,12 +159,19 @@ export function showTaskCreation(e) {
   taskCreate(e);
   const closeButton = document.querySelector('.taskCreationLayout .crossIco');
   closeButton.addEventListener('click', () => {
-    document.querySelector('.taskCreationLayout').remove();
+    hideTaskCreation();
   });
+
+  document
+    .querySelector('.taskCreationLayout')
+    .addEventListener('click', (event) => {
+      if (event.target === document.querySelector('.taskCreationLayout'))
+        hideTaskCreation();
+    });
 }
 
 function hideTaskCreation() {
-  body.removeChild(document.querySelector('.taskCreationLayout'));
+  document.querySelector('.taskCreationLayout').remove();
 }
 
 export function showFilter() {

@@ -1,4 +1,4 @@
-import { taskView, mainDB, userDB } from '../../index.js';
+import { taskView, mainDB, userDB, currentUser } from '../../index.js';
 import { popUp } from '../helpers/popUp.js';
 import { Task } from '../model/model.task.js';
 
@@ -7,9 +7,7 @@ export function taskCreate(e) {
   const taskPage = document.querySelector('.task');
   const select = document.querySelectorAll('.taskCreationLayout select');
 
-  select[0].innerHTML = getUserSelects(
-    userDB.getCurrentUserFromLocalStorage().name
-  );
+  select[0].innerHTML = getUserSelects(currentUser.name);
   document.querySelector('.chooseImportance input[value="low"]').checked = true;
   TaskBoardSelected(e.target, select[1]);
 
@@ -98,7 +96,7 @@ function reset(e) {
 
   document.querySelector('.title input').value = '';
   document.querySelector('.description textarea').value = '';
-  select[0].innerHTML = getUserSelects();
+  select[0].innerHTML = getUserSelects(currentUser.name);
 
   document.querySelector('.chooseImportance input[value="low"]').checked = true;
 

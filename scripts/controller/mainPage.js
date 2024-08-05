@@ -29,6 +29,6 @@ export function showTaskFeed(
 
   const createTask = document.querySelectorAll('.tableHeader .plusIco');
   createTask.forEach((elem) =>
-    elem.addEventListener('click', (e) => showTaskCreation(e))
+    elem.addEventListener('click', (e) => setTimeout(() => showTaskCreation(e)))
   );
 }

@@ -83,6 +83,7 @@ export function clickableTasks() {
 
           taskElem.style.left = `${moveX - mousePositionX}px`;
           taskElem.style.top = `${moveY - mousePositionY}px`;
+          taskElem.style.cursor = 'grab';
 
           if (identifyBoard(e, allFeeds)) {
             currentBoard = identifyBoard(e, allFeeds);
@@ -103,6 +104,8 @@ export function clickableTasks() {
           taskElem.style.width = '';
           taskElem.style.zIndex = '';
           taskElem.style.position = '';
+          taskElem.style.cursor = '';
+
           if (currentBoard) currentBoard.style.boxShadow = '';
 
           document.querySelector('.empty-div').remove();
