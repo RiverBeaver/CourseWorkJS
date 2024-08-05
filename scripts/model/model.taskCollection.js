@@ -57,15 +57,15 @@ export class TaskCollection {
       return true;
     });
 
-    this.sortTaskByDate();
+    this.sortTaskByDate(filteredTasks);
 
     let returnedArray = filteredTasks.slice(skip, top + skip);
 
     return returnedArray;
   }
 
-  sortTaskByDate() {
-    return this.taskArray.sort(
+  sortTaskByDate(filteredTasks) {
+    return filteredTasks.sort(
       (a, b) => Date.parse(b.lastDate) - Date.parse(a.lastDate)
     );
   }
