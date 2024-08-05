@@ -1,13 +1,13 @@
-### Your site is live at https://riverbeaver.github.io/CourseWorkJS/
+### The site is live at https://riverbeaver.github.io/CourseWorkJS/
 
 # Task manager
 <strong>
+Курссовая работа, сделаная на курсах Front-end разработки от IT STEP Academy. Сдалана в группе из 3-х человек.
+<br>
+<br>
 index.html - основная html, включающая в себя остальные страницы<br>
 styles.scss - собирает в себя все прочие стили, лежащие в папке styles<br>
 script.js и index.js - основные файлы скриптов<br>
-
-  
-  
   
 ## Структура папок
   
@@ -15,9 +15,6 @@ Task Manager - папка с ассетами в их исходном виде<
 assets/svg - папка с кодом svg изображений, которым для проявления нужна дополнительная стилизация, по сути своей готовые шаблоны для вставки в html<br>
 assets/png - папка с png. на данный момент png в проекте не используются<br>
 assets/fonts - шрифты<br>
-
-  
-  
   
 ### Участники учебного проекта
  
