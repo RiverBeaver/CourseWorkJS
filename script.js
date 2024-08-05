@@ -138,8 +138,15 @@ function showProfileLayout() {
 
   document
     .querySelector('.profileLayout .crossIco')
-    .addEventListener('click', (click) => {
+    .addEventListener('click', () => {
       hideProfileLayout();
+    });
+
+  document
+    .querySelector('.profileLayout')
+    .addEventListener('click', (event) => {
+      if (event.target === document.querySelector('.profileLayout'))
+        hideProfileLayout();
     });
 }
 

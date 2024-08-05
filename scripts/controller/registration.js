@@ -43,12 +43,11 @@ export function registration() {
           userDB.saveUserArrayInLocalStorage();
           crutchLogin();
         } else popUp(`User with this email already exist.`);
-      }
-      if (regData.password !== regData.repeatPassword) {
+      } else if (regData.password !== regData.repeatPassword) {
         popUp(
           `The password and the confirmation of the password do not match. Try again`
         );
-      } else {
+      } else if (regData.password.length < 6) {
         popUp(`The password must be at least 6 characters long`);
       }
     }

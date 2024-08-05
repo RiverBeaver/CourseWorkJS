@@ -1,25 +1,27 @@
-import { setUser } from "../../index.js";
+import { setUser } from '../../index.js';
 
 export class HeaderView {
-    constructor(containerID) {
-        this.containerID = containerID;
-    }
+  constructor(containerID) {
+    this.containerID = containerID;
+  }
 
-    display(containerID, content) {
-        const container = document.getElementById(`${containerID}`);
-        container.querySelector('.userName').innerText = content[0];
-        container.querySelector('.userLogo').innerHTML = '';
-        container.querySelector('.userLogo').insertAdjacentHTML('afterbegin', content[1]);
-    }
+  display(containerID, content) {
+    const container = document.getElementById(`${containerID}`);
+    container.querySelector('.userName').innerText = content[0];
+    container.querySelector('.userLogo').innerHTML = '';
+    container
+      .querySelector('.userLogo')
+      .insertAdjacentHTML('afterbegin', content[1]);
+  }
 
-    setCurrentUser(userObj) {
-        setUser(userObj);
-        this.display(this.containerID, this.getHTML(userObj));
-    }
+  setCurrentUser(userObj) {
+    setUser(userObj);
+    this.display(this.containerID, this.getHTML(userObj));
+  }
 
-    getHTML(userObj) {
-        return [userObj.name, `<img src="avatar/${userObj.avatar}.png">`]
-    }
+  getHTML(userObj) {
+    return [userObj.name, `<img src="avatar/${userObj.avatar}.png">`];
+  }
 }
 
 // let based = `
