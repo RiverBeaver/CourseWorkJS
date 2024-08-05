@@ -142,7 +142,11 @@ a:hover {
   text-decoration: underline;
 }
 
-img[src="assets/png/sortIco.png"], img[src="assets/png/plusIco.png"], img[src="assets/png/deleteIco.png"], img[src="assets/png/optionsIco.png"], img[src="assets/png/avatarPlaceholder.png"] {
+img[src="assets/png/sortIco.png"],
+img[src="assets/png/plusIco.png"],
+img[src="assets/png/deleteIco.png"],
+img[src="assets/png/optionsIco.png"],
+img[src="assets/png/avatarPlaceholder.png"] {
   filter: invert(1);
 }
 
@@ -382,6 +386,7 @@ body main .toolbar section div:hover {
 }
 body main .taskBoard {
   display: flex;
+  overflow-x: auto;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   height: calc(100vh - 3.5rem - 2rem);
@@ -724,7 +729,6 @@ body .task .actionsBar {
   top: 1rem;
   display: flex;
   flex-direction: row;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   -moz-column-gap: 0.25rem;
@@ -1051,7 +1055,7 @@ body .profileOptions > *:hover {
 }
 
 .popUp {
-  position: absolute;
+  position: fixed;
   padding: 1rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid rgb(139, 163, 112);
